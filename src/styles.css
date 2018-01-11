@@ -1,0 +1,19 @@
+@import url("//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css");
+
+a {
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+a.destroy:hover {
+  color: red !important;
+}
+
+.contacts-form,
+.contacts-list {
+  margin: 50px 0;
+}
+
