@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from '@app/app.component';
-import { GlobalConstant } from '@app/app.constants';
+import { Constants } from '@app/app.constants';
 import { ContactFormComponent } from '@app/component/contact';
 import { LocalStorageService } from '@app/services/local-storage.service';
+import { GuidService } from '@app/services/guid.service';
 import { ContactService } from '@app/services/contact.service';
 import { ContactModel } from '@app/models/contact.model';
 
@@ -20,7 +21,8 @@ import { ContactModel } from '@app/models/contact.model';
     ReactiveFormsModule
   ],
   providers: [
-    GlobalConstant,
+    Constants,
+    GuidService,
     LocalStorageService,
     ContactService,
     ContactModel,
