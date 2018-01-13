@@ -16,6 +16,7 @@ export class ContactService {
   public store(contact: ContactModel) {
     const contacts: Array<ContactModel> = this.load();
     contact.id = this.guidService.generateId();
+    contact.address = contact.address.replace(new RegExp('\n', 'g'), '<br>');
     const data =  [].concat([contact], contacts);
     this.localStorageService.setItem(Constants.CONTACTS, JSON.stringify(data));
   }

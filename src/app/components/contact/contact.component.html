@@ -33,7 +33,7 @@
       <textarea
         id="address"
         class="form-control"
-        rows="2"
+        rows="3"
         placeholder="Enter address"
         formControlName="address"></textarea>
       <div *ngIf="address.dirty && address.invalid">
@@ -71,7 +71,9 @@
               (click)="destroyContact(contact.id)">Remove</a>
           </small>
         </div>
-        <p class="mb-1">{{ contact.address }}</p>
+        <p
+          class="mb-1"
+          [innerHTML]="contact.address"></p>
       </li>
     </ng-template>
     <ng-template #elseBlock>
