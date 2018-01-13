@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from '@app/app.component';
 import { Constants } from '@app/app.constants';
-import { ContactFormComponent } from '@app/component/contact';
+import { ContactFormComponent } from '@app/components/contact/contact.component';
 import { LocalStorageService } from '@app/services/local-storage.service';
 import { GuidService } from '@app/services/guid.service';
 import { ContactService } from '@app/services/contact.service';

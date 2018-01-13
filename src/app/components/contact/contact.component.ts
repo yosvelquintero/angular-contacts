@@ -39,8 +39,15 @@ export class ContactFormComponent implements OnInit {
   }
 
   private createFormControls() {
-    this.name = new FormControl('', [Validators.required]);
-    this.address = new FormControl('', [Validators.required]);
+    this.name = new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.maxLength(100)
+    ]);
+    this.address = new FormControl('', [
+      Validators.required,
+      Validators.maxLength(100)
+    ]);
   }
 
   private createForm() {

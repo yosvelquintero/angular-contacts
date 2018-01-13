@@ -13,27 +13,37 @@
         id="name"
         class="form-control"
         placeholder="Enter name"
+        autocomplete="off"
         formControlName="name">
-      <small
-        class="error"
-        *ngIf="name.invalid && name.dirty">
-        This field is required
-      </small>
+      <div *ngIf="name.dirty && name.invalid">
+        <small
+          class="error"
+          *ngIf="name.errors.required">This field is required</small>
+        <small
+          class="error"
+          *ngIf="name.errors.minlength">This field must be 5 characters long</small>
+        <small
+          class="error"
+          *ngIf="name.errors.maxlength">This field must be under 100 characters long</small>
+      </div>
     </div>
 
-    <div class='form-group'>
-      <label for="name">Address</label>
-      <input
-        type="text"
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea
         id="address"
         class="form-control"
+        rows="2"
         placeholder="Enter address"
-        formControlName="address">
-      <small
-        class="error"
-        *ngIf="address.invalid && address.dirty">
-        This field is required
-      </small>
+        formControlName="address"></textarea>
+      <div *ngIf="address.dirty && address.invalid">
+        <small
+          class="error"
+          *ngIf="address.errors.required">This field is required</small>
+        <small
+          class="error"
+          *ngIf="address.errors.maxlength">This field must be under 100 characters long</small>
+      </div>
     </div>
 
     <button
